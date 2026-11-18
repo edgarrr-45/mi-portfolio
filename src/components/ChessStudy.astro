@@ -1,0 +1,85 @@
+---
+
+---
+
+<section id="ajedrez" class="max-w-4xl mx-auto px-6 py-20 border-t border-ink/10">
+    <span class="text-burnt text-xs font-semibold uppercase">Caso de Estudio Destacado • Análisis Exploratorio</span>
+    <h2 class="text-3xl md:text-4xl font-bold text-ink">Ajedrez en Datos: ¿Dónde pierdo mis partidas?</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+
+        <div class="bg-white/40 border border-ink/10 rounded-xl p-4 text-center">
+            <span class="block text-2xl md:text-3xl font-bold text-ink">2,943</span>
+            <span class="text-xs text-ink/60">Partidas analizadas</span>
+        </div>
+
+        <div class="bg-white/40 border border-ink/10 rounded-xl p-4 text-center">
+             <span class="block text-2xl md:text-3xl font-bold text-ink">+8.8% </span>
+            <span class="text-xs text-ink/60">Ventaja con blancas en Blitz</span>
+        </div>
+
+        <div class="bg-white/40 border border-ink/10 rounded-xl p-4 text-center">
+             <span class="block text-2xl md:text-3xl font-bold text-ink">Pandas + SQL</span>
+            <span class="text-xs text-ink/60">Consultas CTEs y Window Fns</span>
+        </div>
+
+        <div class="bg-white/40 border border-ink/10 rounded-xl p-4 text-center">
+             <span class="block text-2xl md:text-3xl font-bold text-ink">En vivo ↗</span>
+            <span class="text-xs text-ink/60">App interactiva en Streamlit</span>
+        </div>
+
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mt-12 items-start">
+        
+        <div>
+            <h3 class="text-xl font-bold text-ink mb-4">Del pipeline a la refutación de hipótesis</h3>
+            
+            <p class="text-sm text-ink/80 leading-relaxed mb-4">
+                El proyecto nació para responder una pregunta concreta: <em>¿dónde pierdo mis partidas?</em> Extraje mi historial completo desde la API pública de Chess.com a lo largo de 38 meses y sistematicé la limpieza con Pandas, resolviendo desfases de zonas horarias (UTC a CDMX) y reclasificando resultados.
+            </p>
+
+            <p class="text-sm text-ink/80 leading-relaxed mb-4">
+                <strong>El hallazgo sobre el sesgo de muestra:</strong> Con un solo mes de datos (octubre de 2026), la tendencia sugería un mejor rendimiento con piezas negras. Sin embargo, al procesar las 2,943 partidas completas, esa diferencia desapareció y emergió una ventaja sólida de casi 9 puntos a favor de las blancas en Blitz (+8.8%). Esto demostró empíricamente el riesgo de formular conclusiones con muestras cortas.
+            </p>
+
+            <p class="text-sm text-ink/80 leading-relaxed">
+                <strong>Arquitectura modular y SQL:</strong> Desacoplé el flujo en scripts independientes (<code class="bg-ink/5 px-1.5 py-0.5 rounded text-xs">explorar.py</code>, <code class="bg-ink/5 px-1.5 py-0.5 rounded text-xs">analisis.py</code>, <code class="bg-ink/5 px-1.5 py-0.5 rounded text-xs">rachas.py</code>, <code class="bg-ink/5 px-1.5 py-0.5 rounded text-xs">abandonos.py</code>) y persistí los datos en SQLite. Con <code class="bg-ink/5 px-1.5 py-0.5 rounded text-xs">consultas.sql</code> repliqué cada métrica usando CTEs y funciones de ventana (<code class="bg-ink/5 px-1.5 py-0.5 rounded text-xs">LAG</code>, <code class="bg-ink/5 px-1.5 py-0.5 rounded text-xs">LEAD</code>), validando los hallazgos en dos entornos técnicos distintos.
+            </p>
+        </div>
+
+        
+        <div>
+            <div class="bg-white/40 border border-ink/10 rounded-2xl p-4 shadow-sm">
+                <img 
+                    src="/public/victorias_por_modo.png" 
+                    alt="Porcentaje de victorias por modo de juego y color" 
+                    class="rounded-xl w-full border border-ink/5" 
+                />
+                <p class="text-xs text-ink/60 mt-2 text-center">
+                    Visualización generada con Matplotlib a partir del dataset procesado.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-3 mt-4">
+                <a 
+                    href="https://ajedrez-en-datos.streamlit.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="bg-burnt text-cream px-5 py-3 rounded-lg font-medium text-center hover:opacity-90 transition shadow-sm block"
+                >
+                    Probar app interactiva en vivo (Streamlit) ↗
+                </a>
+
+                <a 
+                    href="https://github.com/edgarrr-45/ajedrez-en-datos" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="border border-ink text-ink px-5 py-3 rounded-lg font-medium text-center hover:bg-ink hover:text-cream transition block"
+                >
+                    Ver repositorio y consultas SQL en GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

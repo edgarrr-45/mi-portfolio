@@ -1,0 +1,7 @@
+---
+interface Props { name: string; highlight?: boolean; }
+const { name, highlight = false } = Astro.props;
+---
+
+<span class={highlight ? "bg-burnt/10 border border-burnt text-burnt font-semibold px-3 py-1.5 rounded-lg text-xs font-mono shadow-sm" : "bg-white/60 border border-ink/10 px-3 py-1.5 rounded-lg text-xs font-mono text-ink/80 shadow-sm"}>{name}</span>
+

@@ -1,0 +1,144 @@
+---
+import TechBadge from './TechBadge.astro';
+
+const cvEdgar = `${import.meta.env.BASE_URL}/CV_Edgar_Gaytan.pdf`;
+
+const highlightedSkills = [
+  "SQL",
+  "Python",
+  "Pandas",
+  "Power BI",
+  "Excel Avanzado",
+  "Streamlit",
+  "Google Cloud",
+];
+
+const highlights = [
+  {
+    step: "01",
+    title: "Enfoque en Valor de Negocio",
+    description: "Extracción vía APIs, pipelines limpios en Python/SQL y visualizaciones accionables orientadas a la toma de decisiones.",
+  },
+  {
+    step: "02",
+    title: "Formación en TIC + Google Cloud",
+    description: "Estudiante de Ingeniería en TIC con bases sólidas en arquitecturas en la nube, machine learning y metodologías ágiles.",
+  },
+  {
+    step: "03",
+    title: "Disponibilidad Inmediata",
+    description: "Abierto a oportunidades como Analista de Datos Jr. o Trainee en modalidades Remota o Híbrida.",
+  },
+];
+---
+
+<section id="curriculum" class="max-w-4xl mx-auto px-6 py-24 border-t border-ink/10">
+  <div class="mb-10">
+    <span class="text-burnt text-xs font-semibold uppercase tracking-wider block mb-2 font-mono">
+      Perfil Profesional & Resumen Ejecutivo
+    </span>
+    <h2 class="text-3xl md:text-4xl font-bold text-ink leading-tight">
+      Currículum Vitae
+    </h2>
+    <p class="mt-3 text-lg text-ink/70 leading-relaxed max-w-2xl">
+      Resumen de competencias técnicas, trayectoria académica y disponibilidad para incorporarme a equipos de analítica.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+    
+    <!-- Columna Izquierda: Pitch & Viñetas Editoriales (7 cols) -->
+    <div class="md:col-span-7 space-y-6">
+      
+      <!-- Puntos Clave de Perfil con Índices Editoriales -->
+      <div class="space-y-4">
+        {highlights.map((item) => (
+          <div class="flex items-start gap-4 bg-white/70 border border-ink/10 p-4 rounded-xl shadow-xs">
+            <span class="text-xs font-mono font-bold text-burnt bg-burnt/10 border border-burnt/20 px-2 py-1 rounded-md shrink-0 mt-0.5">
+              {item.step}
+            </span>
+            <div>
+              <h3 class="text-sm font-bold text-ink">{item.title}</h3>
+              <p class="text-xs text-ink/75 mt-0.5 leading-relaxed">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Habilidades clave -->
+      <div class="pt-2">
+        <p class="text-xs font-mono uppercase tracking-wider text-ink/50 block mb-2.5">
+          Herramientas destacadas en CV
+        </p>
+        <div class="flex flex-wrap gap-1.5">
+          {highlightedSkills.map((skill) => (
+            <TechBadge 
+              name={skill} 
+              highlight={skill === "SQL" || skill === "Python" || skill === "Google Cloud"} 
+            />
+          ))}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Columna Derecha: Tarjeta Documental Minimalista (5 cols) -->
+    <div class="md:col-span-5 bg-white border border-ink/15 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+      
+      <!-- Encabezado de Documento -->
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <span class="bg-burnt/10 text-burnt text-[11px] font-mono font-semibold px-2.5 py-1 rounded-md">
+            Documento Oficial
+          </span>
+          <span class="text-xs font-mono text-ink/50">PDF · 1 Página</span>
+        </div>
+
+        <!-- Ficha Visual del Archivo con Vector Técnico -->
+        <div class="p-4 rounded-xl bg-cream/50 border border-ink/10 mb-5">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-ink text-cream flex items-center justify-center font-mono text-xs font-bold shadow-xs shrink-0">
+              PDF
+            </div>
+            <div class="overflow-hidden">
+              <p class="text-xs font-bold text-ink truncate">CV_Edgar_Gaytan.pdf</p>
+              <p class="text-[11px] text-ink/60 mt-0.5">Ingeniería TIC · Data Analyst Jr.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-xs text-ink/70 leading-relaxed mb-6">
+          Formato optimizado para sistemas de seguimiento de candidatos (ATS) y lectura rápida por líderes de equipo técnico.
+        </p>
+      </div>
+
+      <!-- Acciones CTA con Iconos Vectoriales SVG -->
+      <div class="space-y-2.5 pt-2">
+        <a 
+          href={cvEdgar} 
+          download="CV_Edgar_Gaytan.pdf" 
+          class="w-full bg-burnt hover:bg-burnt/90 text-cream py-3 px-4 rounded-xl font-medium text-xs text-center flex items-center justify-center gap-2 transition shadow-sm group"
+        >
+          <svg class="w-4 h-4 transition-transform group-hover:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+          </svg>
+          <span>Descargar Currículum (PDF)</span>
+        </a>
+
+        <a 
+          href={cvEdgar} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full border border-ink/20 hover:border-ink hover:bg-ink/5 text-ink py-2.5 px-4 rounded-xl font-medium text-xs text-center flex items-center justify-center gap-2 transition group"
+        >
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+          </svg>
+          <span>Abrir vista previa en navegador</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>

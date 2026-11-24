@@ -1,5 +1,5 @@
 ---
-
+const graficaUrl = `${import.meta.env.BASE_URL}/victorias_por_modo.png`;
 ---
 
 <section id="ajedrez" class="max-w-4xl mx-auto px-6 py-24 border-t border-ink/10">
@@ -109,7 +109,7 @@
         <!-- Contenedor del Gráfico con contraste limpio -->
         <div class="p-3 bg-white">
           <img 
-            src="/public/victorias_por_modo.png" 
+            src={graficaUrl}
             alt="Porcentaje de victorias por modo de juego y color en ajedrez" 
             class="rounded-lg w-full"
           />

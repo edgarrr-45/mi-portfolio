@@ -1,12 +1,19 @@
 ---
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+
 const { title = "Mi Portafolio | Analista de Datos" } = Astro.props;
+const description = "Portafolio de Edgar Gerardo Gaytan Diaz, estudiante de Ingeniería en TIC y Analista de Datos. Proyectos de extracción vía API, pipelines limpios y visualización con Python y SQL.";
 
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
+   <meta name="description" content={description} />
+   <meta property="og:title" content={title} />
+   <meta property="og:description" content={description} />
+   <meta property="og:type" content="website" />
   <title>{title}</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,9 +25,7 @@ const { title = "Mi Portafolio | Analista de Datos" } = Astro.props;
         <slot />
     </main>
 
-    <footer>
-        <p>&copy; 2026 Mi Portfolio. Edgar Gerardo Gaytan Diaz.</p>
-    </footer>
+    <Footer />
 </body>
 
 </html>

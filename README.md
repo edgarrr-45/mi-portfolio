@@ -2,7 +2,7 @@
 
 Portafolio profesional desarrollado con **Astro** y **Tailwind CSS v4**, enfocado en la presentación de proyectos de análisis de datos, pipelines de extracción automatizada y visualización estratégica.
 
-> 🌐 **Sitio web en desarrollo:** Próximamente publicado en GitHub Pages.  
+> 🌐 **Sitio web oficial en vivo:** [edgarrr-45.github.io/mi-portfolio](https://edgarrr-45.github.io/mi-portfolio/)  
 > ♟️ **Proyecto Estrella en Vivo:** [ajedrez-en-datos.streamlit.app](https://ajedrez-en-datos.streamlit.app/)  
 > 💼 **LinkedIn:** [linkedin.com/in/edgar-gaytan12](https://www.linkedin.com/in/edgar-gaytan12)  
 > ✉️ **Contacto:** edgaytan7@gmail.com
